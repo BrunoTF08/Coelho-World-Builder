@@ -14,8 +14,8 @@ namespace CoelhoLabs.WorldBuilder.Editor
         private Label status;
         private Button activate;
         private BuilderSettings Settings => BuilderSettings.instance;
-        [MenuItem("Tools/Coelho Labs/Coelho World Builder")]
-        public static void Open() { GetWindow<WorldBuilderWindow>("Coelho World Builder"); }
+        [MenuItem("Tools/Coelho Labs/Easy Level Design Tool")]
+        public static void Open() { GetWindow<WorldBuilderWindow>("Easy Level Design Tool"); }
         private void OnEnable() { painter = new ScenePainter(); BuilderLog.Changed += UpdateStatus; }
         private void OnDisable()
         {
@@ -28,10 +28,11 @@ namespace CoelhoLabs.WorldBuilder.Editor
         { if (activate != null) activate.text = painter != null && painter.Active ? "Desativar pintura" : "Ativar pintura"; }
         public void CreateGUI()
         {
+            titleContent = new GUIContent("Easy Level Design Tool");
             minSize = new Vector2(520, 420);
             rootVisualElement.Clear();
             var header = new Toolbar();
-            var title = new Label("◉ COELHO LABS  /  World Builder  1.3.0");
+            var title = new Label("◉ COELHO LABS  /  Easy Level Design Tool  1.3.1");
             title.style.flexGrow = 1; title.style.unityFontStyleAndWeight = FontStyle.Bold;
             header.Add(title);
             header.Add(new ToolbarButton(() => ShowPage("Settings")) { text = "Configurações" });
@@ -103,9 +104,7 @@ namespace CoelhoLabs.WorldBuilder.Editor
         {
             var package = UnityEditor.PackageManager.PackageInfo.FindForAssembly(typeof(WorldBuilderWindow).Assembly);
             if (package != null) EditorUtility.OpenWithDefaultApp(Path.Combine(package.resolvedPath, "Documentation", "GettingStarted.md"));
-            else EditorUtility.DisplayDialog("Coelho World Builder", "Consulte Documentation/GettingStarted.md no pacote.", "OK");
+            else EditorUtility.DisplayDialog("Easy Level Design Tool", "Consulte Documentation/GettingStarted.md no pacote.", "OK");
         }
     }
 }
-
-

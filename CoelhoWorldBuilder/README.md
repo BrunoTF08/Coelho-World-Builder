@@ -1,10 +1,10 @@
-# Coelho World Builder · Coelho Labs
+# Easy Level Design Tool · Coelho Labs
 
-Versão 1.3.0. Pacote UPM para Unity 2022.3 LTS e Unity 6, com ferramentas locais de construção de cenários.
+Versão 1.3.1. Pacote UPM para Unity 2022.3 LTS e Unity 6, com ferramentas locais de construção de cenários.
 
 ## Instalação
 
-No Unity: **Window > Package Manager > + > Add package from disk**. Selecione `CoelhoWorldBuilder/package.json`. Abra **Tools > Coelho Labs > Coelho World Builder**. Se a janela já estava aberta, reabra-a para atualizar a navegação.
+No Unity: **Window > Package Manager > + > Add package from disk**. Selecione `CoelhoWorldBuilder/package.json`. Abra **Tools > Coelho Labs > Easy Level Design Tool**. Se a janela já estava aberta, reabra-a para atualizar a navegação.
 
 ## Smart Grid & Directional Placement
 
@@ -22,5 +22,3 @@ A grade de posicionamento usa preferências do projeto; as grades e linhas indep
 - Runtime/Components: metadados e componentes de autoria; sem comportamento de construção em runtime.
 - Tests/Editor: testes NUnit para a lógica principal.
 - Tools/Validation na raiz do workspace: harness reproduzível de integração em projetos isolados.
-
-

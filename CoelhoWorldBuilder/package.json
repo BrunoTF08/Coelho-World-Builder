@@ -1,7 +1,7 @@
 {
   "name": "com.coelholabs.worldbuilder",
-  "version": "1.3.0",
-  "displayName": "Coelho World Builder",
+  "version": "1.3.1",
+  "displayName": "Easy Level Design Tool",
   "description": "Offline prefab placement and world authoring tools by Coelho Labs.",
   "unity": "2022.3",
   "author": { "name": "Coelho Labs" }

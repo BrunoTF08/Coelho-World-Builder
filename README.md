@@ -1,6 +1,6 @@
-# Coelho World Builder
+# Easy Level Design Tool
 
-Extensão de construção de cenários 3D para Unity Editor, desenvolvida pela **Coelho Labs**. Versão **1.3.0**, destinada a Unity **2022.3 LTS** e **Unity 6**.
+Extensão de construção de cenários 3D para Unity Editor, desenvolvida pela **Coelho Labs**. Versão **1.3.1**, destinada a Unity **2022.3 LTS** e **Unity 6**.
 
 ## Instalação
 
@@ -12,7 +12,7 @@ https://github.com/BrunoTF08/Coelho-World-Builder.git?path=/CoelhoWorldBuilder
 
 Também é possível baixar o repositório e usar **Add package from disk**, selecionando `CoelhoWorldBuilder/package.json`.
 
-Abra **Tools > Coelho Labs > Coelho World Builder**.
+Abra **Tools > Coelho Labs > Easy Level Design Tool**.
 
 ## Recursos implementados
 

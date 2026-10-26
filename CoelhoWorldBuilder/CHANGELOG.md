@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 — Easy Level Design Tool
+
+- Nome da ferramenta atualizado no Package Manager, menu Tools, janela, cabeçalho, ajuda, logs e documentação.
+- Identificadores de pacote/assemblies, namespaces, GUIDs e caminhos de persistência preservados para compatibilidade.
+
 ## 1.3.0 — Categorias e seleção rápida
 
 - Biblioteca ScriptableObject por projeto em ProjectSettings/CoelhoWorldBuilderLibrary.asset, com categorias virtuais, GUIDs e migração da lista antiga para Outros.

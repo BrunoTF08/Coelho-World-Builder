@@ -1,4 +1,4 @@
-# Coelho World Builder 1.3 — Categorias e Smart Grid
+# Easy Level Design Tool 1.3 — Categorias e Smart Grid
 
 ## Categorias e seleção rápida
 
@@ -22,7 +22,7 @@ Teste manualmente o drop, expansão, menu Mover e atalhos físicos na Scene View
 
 ## Iniciar
 
-Instale/atualize pelo Package Manager > Add package from disk usando o package.json deste pacote. Abra Tools > Coelho Labs > Coelho World Builder. Reabra a janela após atualizar para ver a nova navegação.
+Instale/atualize pelo Package Manager > Add package from disk usando o package.json deste pacote. Abra Tools > Coelho Labs > Easy Level Design Tool. Reabra a janela após atualizar para ver a nova navegação.
 
 1. Abra **Smart Grid & Directional Placement**. Placement & Smart Grid e Prefab Painter continuam disponíveis e abrem o mesmo painel.
 2. Escolha a raiz de um prefab no campo Prefab selecionado ou clique no nome de uma peça da biblioteca. A seleção pelo ObjectField adiciona o asset à lista, sem duplicar ou modificar o arquivo original.

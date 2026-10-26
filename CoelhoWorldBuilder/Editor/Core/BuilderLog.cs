@@ -10,7 +10,7 @@ namespace CoelhoLabs.WorldBuilder.Editor
         internal static void Info(string message)
         {
             Last = message;
-            Debug.Log("[Coelho World Builder] " + message);
+            Debug.Log("[Easy Level Design Tool] " + message);
             Changed?.Invoke(message);
         }
     }
