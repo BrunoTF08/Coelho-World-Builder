@@ -1,5 +1,7 @@
 # Easy Level Design Tool · Coelho Labs
 
+[Manual de instruções em português](Documentation/Manual-pt-BR.md) · [Downloads no GitHub](https://github.com/BrunoTF08/Coelho-World-Builder/releases/tag/v1.3.1)
+
 Versão 1.3.1. Pacote UPM para Unity 2022.3 LTS e Unity 6, com ferramentas locais de construção de cenários.
 
 ## Instalação

@@ -2,6 +2,15 @@
 
 Extensão de construção de cenários 3D para Unity Editor, desenvolvida pela **Coelho Labs**. Versão **1.3.1**, destinada a Unity **2022.3 LTS** e **Unity 6**.
 
+## Download e manual
+
+- [Baixar pacote .tgz para o Package Manager](https://github.com/BrunoTF08/Coelho-World-Builder/releases/download/v1.3.1/com.coelholabs.worldbuilder-1.3.1.tgz)
+- [Baixar ZIP com o pacote e manual offline](https://github.com/BrunoTF08/Coelho-World-Builder/releases/download/v1.3.1/Easy-Level-Design-Tool-1.3.1.zip)
+- [Baixar manual HTML para abrir no navegador](https://github.com/BrunoTF08/Coelho-World-Builder/releases/download/v1.3.1/Manual-Easy-Level-Design-Tool.html)
+- [Ler o manual de instruções em português](CoelhoWorldBuilder/Documentation/Manual-pt-BR.md)
+
+Para instalar o .tgz: **Window > Package Manager > + > Add package from tarball**. Para o ZIP, extraia e use **Add package from disk** com `CoelhoWorldBuilder/package.json`. O ZIP não é um arquivo .unitypackage.
+
 ## Instalação
 
 No Unity, abra **Window > Package Manager > + > Add package from git URL** e informe:

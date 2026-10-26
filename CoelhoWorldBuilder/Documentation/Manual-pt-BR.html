@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manual — Easy Level Design Tool 1.3.1</title>
+<style>
+:root{color-scheme:light;font-family:Segoe UI,Arial,sans-serif;color:#192b33;background:#eef3f4}
+body{margin:0;line-height:1.65}main{max-width:900px;margin:32px auto;padding:36px 48px;background:#fff;border-radius:14px;border-top:7px solid #16855b}
+.brand{color:#16855b;font-weight:700;letter-spacing:.14em;font-size:12px}h1{line-height:1.15;font-size:38px;margin-bottom:12px}h2{font-size:23px;margin-top:40px;padding-top:16px;border-top:1px solid #dfe8e8;scroll-margin-top:24px}
+nav{background:#f0f8f4;border-radius:8px;padding:18px 26px}nav strong{color:#156647}nav ol{columns:2;column-gap:32px;padding-left:24px}nav li{break-inside:avoid;margin:5px 0}
+a{color:#126b50}p,li{overflow-wrap:anywhere}li{margin:7px 0}footer{margin-top:36px;font-size:13px;color:#53646b;border-top:1px solid #dfe8e8;padding-top:16px}
+@media(max-width:650px){main{margin:0;padding:24px 20px;border-radius:0}h1{font-size:30px}nav ol{columns:1}}
+@page{size:A4;margin:16mm}@media print{body{background:#fff}main{max-width:none;margin:0;padding:0;border:0}nav ol{columns:2}h2{break-after:avoid}li{break-inside:avoid}a{color:inherit;text-decoration:none}}
+</style></head><body><main><div class="brand">COELHO LABS · MANUAL OFFLINE · 1.3.1</div>
+<nav aria-label="Sumário"><strong>Sumário</strong><ol><li><a href='#section-2'>Manual de instru&#231;&#245;es • vers&#227;o 1.3.1 • Coelho Labs</a></li>
+<li><a href='#section-3'>1. Baixar e instalar</a></li>
+<li><a href='#section-4'>2. Primeiro uso em poucos minutos</a></li>
+<li><a href='#section-5'>3. Organizar a biblioteca</a></li>
+<li><a href='#section-6'>4. Trocar de pe&#231;a sem voltar ao painel</a></li>
+<li><a href='#section-7'>5. Configurar a grade adaptativa</a></li>
+<li><a href='#section-8'>6. Construir ruas e pisos com Ctrl</a></li>
+<li><a href='#section-9'>7. &#194;ncoras, alinhamento e conex&#245;es manuais</a></li>
+<li><a href='#section-10'>8. Posicionamento e pintura</a></li>
+<li><a href='#section-11'>9. Refer&#234;ncia r&#225;pida de atalhos</a></li>
+<li><a href='#section-12'>10. Mesh Colliders e objetos gerados</a></li>
+<li><a href='#section-13'>11. Grade e linhas independentes</a></li>
+<li><a href='#section-14'>12. Salvar, compartilhar e atualizar</a></li>
+<li><a href='#section-15'>13. Resolver problemas comuns</a></li>
+<li><a href='#section-16'>14. Limites da vers&#227;o</a></li></ol></nav>
+<h1 id='section-1'>Easy Level Design Tool</h1>
+<h2 id='section-2'>Manual de instru&#231;&#245;es • vers&#227;o 1.3.1 • Coelho Labs</h2>
+<p>Ferramenta de constru&#231;&#227;o de cen&#225;rios para o Unity Editor. Compatibilidade-alvo: Unity 2022.3 LTS e Unity 6. Voc&#234; usa seus pr&#243;prios prefabs; n&#227;o precisa de assets pagos para as opera&#231;&#245;es b&#225;sicas.</p>
+<h2 id='section-3'>1. Baixar e instalar</h2>
+<p>Op&#231;&#227;o recomendada — pacote .tgz:</p>
+<ol>
+<li>Na release do GitHub, baixe com.coelholabs.worldbuilder-1.3.1.tgz.</li>
+<li>No Unity, abra Window &gt; Package Manager.</li>
+<li>Clique em + &gt; Add package from tarball e escolha o arquivo .tgz baixado.</li>
+<li>Aguarde a importa&#231;&#227;o e a compila&#231;&#227;o.</li>
+<li>Abra Tools &gt; Coelho Labs &gt; Easy Level Design Tool.</li>
+</ol>
+<p>Alternativa — arquivo ZIP:</p>
+<ol>
+<li>Baixe Easy-Level-Design-Tool-1.3.1.zip e extraia seu conte&#250;do para uma pasta permanente.</li>
+<li>No Unity, abra Window &gt; Package Manager &gt; + &gt; Add package from disk.</li>
+<li>Selecione CoelhoWorldBuilder/package.json dentro da pasta extra&#237;da.</li>
+<li>Mantenha essa pasta no disco: a instala&#231;&#227;o por disco depende dela.</li>
+</ol>
+<p>O ZIP n&#227;o &#233; um arquivo .unitypackage. N&#227;o use Assets &gt; Import Package para instalar este pacote UPM. Instale uma &#250;nica c&#243;pia; evite manter simultaneamente c&#243;pias em Assets e no Package Manager.</p>
+<p>Se j&#225; houver uma instala&#231;&#227;o por Git ou disco, remova a entrada do pacote no Package Manager antes de escolher outra origem. Isso remove a refer&#234;ncia ao pacote, n&#227;o seus prefabs ou cenas. Reabra a janela da ferramenta ap&#243;s atualizar.</p>
+<h2 id='section-4'>2. Primeiro uso em poucos minutos</h2>
+<ol>
+<li>Abra o painel Smart Grid &amp; Directional Placement.</li>
+<li>Em Prefab selecionado, escolha a raiz de um prefab do Project, n&#227;o um objeto da Hierarchy.</li>
+<li>Deixe Auto Grid Size e Snap Enabled ligados.</li>
+<li>Para m&#243;dulos regulares, use &#226;ncora BottomCorner e escala aleat&#243;ria m&#237;n/m&#225;x igual a 1/1.</li>
+<li>Clique em Activate Placement e coloque o foco na Scene View.</li>
+<li>Mova o mouse: a pr&#233;via transparente mostra onde a pe&#231;a ficar&#225;. Clique para confirmar e continue clicando para colocar c&#243;pias.</li>
+<li>Pressione Escape ou clique em Stop Placement para encerrar. Salve a cena.</li>
+</ol>
+<p>Em Grid, n&#227;o &#233; necess&#225;rio Collider: a ferramenta usa o plano horizontal da grade. Em Surface, ela tenta os Colliders da cena ativa e usa o plano como alternativa.</p>
+<p>N&#227;o tem prefabs para experimentar? No Dashboard, use Criar demonstra&#231;&#227;o. Salve antes todas as cenas sem nome. A ferramenta cria um cubo e uma nova cena aditiva em Assets/CoelhoWorldBuilderDemo, mantendo as outras cenas abertas.</p>
+<h2 id='section-5'>3. Organizar a biblioteca</h2>
+<p>As pastas s&#227;o virtuais e n&#227;o movem os arquivos originais. Abra Asset Library ou a biblioteca no painel de constru&#231;&#227;o.</p>
+<ul>
+<li>Criar: escreva um nome e clique em + Criar categoria.</li>
+<li>Expandir/recolher: use a seta da pasta.</li>
+<li>Adicionar: arraste um ou v&#225;rios prefabs raiz do Project para a pasta. Duplicatas na mesma pasta s&#227;o ignoradas.</li>
+<li>Ativar: expanda a pasta e clique em Ativar. Essa ser&#225; a categoria dos atalhos.</li>
+<li>Selecionar: clique no nome de um prefab; sua pasta tamb&#233;m passa a ser ativa.</li>
+<li>Renomear: edite o nome da pasta e confirme com Enter ou saindo do campo.</li>
+<li>Reordenar: use ↑/↓ nas categorias e refer&#234;ncias.</li>
+<li>Transferir: use Mover e escolha outra pasta.</li>
+<li>Remover: &#215; remove a refer&#234;ncia; Excluir remove a pasta e suas refer&#234;ncias. Os assets continuam no Project.</li>
+</ul>
+<p>A biblioteca anterior &#233; importada uma vez para Outros. Uma refer&#234;ncia marcada [Ausente] aponta para um asset que n&#227;o foi encontrado: remova a entrada ou restaure o arquivo junto com seu .meta original.</p>
+<h2 id='section-6'>4. Trocar de pe&#231;a sem voltar ao painel</h2>
+<p>Com constru&#231;&#227;o ativa e foco na Scene View:</p>
+<ul>
+<li>Ctrl + Q: prefab anterior da categoria ativa.</li>
+<li>Ctrl + E: pr&#243;ximo prefab da categoria ativa.</li>
+</ul>
+<p>A navega&#231;&#227;o &#233; circular. No &#250;ltimo item, E volta ao primeiro; no primeiro, Q vai ao &#250;ltimo. Refer&#234;ncias ausentes s&#227;o ignoradas e a navega&#231;&#227;o nunca troca de categoria por conta pr&#243;pria.</p>
+<p>O indicador mostra categoria, prefab, &#237;ndice/total e tamanho da grade. A troca atualiza o ghost e a grade autom&#225;tica, preservando a origem e os objetos colocados. Em modo manual, a dimens&#227;o de grade escolhida &#233; mantida.</p>
+<p>Os atalhos n&#227;o funcionam com a constru&#231;&#227;o parada ou outra janela em foco. Evite modificadores adicionais Alt, Shift ou Command. Durante edi&#231;&#227;o de texto, eles devem permanecer dispon&#237;veis para o campo, sem trocar prefabs.</p>
+<h2 id='section-7'>5. Configurar a grade adaptativa</h2>
+<p>Auto Grid Size ajusta a grade inteira pelas dimens&#245;es geom&#233;tricas do prefab selecionado, considerando filhos, piv&#244;, rota&#231;&#227;o e escala padr&#227;o. Exemplo: selecionar uma rua 15 &#215; 15 e depois um detalhe 2 &#215; 2 muda as c&#233;lulas de 15 &#215; 15 para 2 &#215; 2. A origem e as pe&#231;as existentes n&#227;o se movem.</p>
+<ul>
+<li>Show Grid: mostra ou oculta as linhas, sem desligar o snap.</li>
+<li>Grid Width / Grid Length: largura X e comprimento Z de cada c&#233;lula. Editar esses campos desliga Auto Grid Size.</li>
+<li>Grid Origin: posi&#231;&#227;o fixa da origem no mundo.</li>
+<li>Grid Height: altura somada &#224; origem Y.</li>
+<li>&#193;rea de exibi&#231;&#227;o: tamanho da regi&#227;o desenhada; h&#225; um limite de linhas por eixo.</li>
+<li>Snap Enabled: ativa/desativa encaixe para o prefab atual.</li>
+<li>Rotation Snap: ajusta o giro Y ao incremento configurado.</li>
+</ul>
+<p>Para ignorar limites visuais inadequados, habilite Dimens&#245;es de encaixe manuais por prefab e preencha Manual Grid Size X/Z. Esses valores s&#227;o medidos ap&#243;s a escala original da raiz, antes da escala padr&#227;o do perfil e da rota&#231;&#227;o. Para uma grade global fixa, desligue Auto Grid Size. Apply Suggested Grid Size aplica a c&#233;lula do perfil no modo manual.</p>
+<p>Auxiliares podem distorcer a dimens&#227;o detectada. No auxiliar, adicione o componente Coelho Labs &gt; Ignore Placement Dimensions para ignorar seu ramo na an&#225;lise. Isso n&#227;o apaga o objeto do prefab.</p>
+<h2 id='section-8'>6. Construir ruas e pisos com Ctrl</h2>
+<p>As pastas da biblioteca e Snap Category s&#227;o configura&#231;&#245;es diferentes. Colocar uma pe&#231;a na pasta Ruas n&#227;o altera automaticamente sua classifica&#231;&#227;o modular.</p>
+<ol>
+<li>Selecione a rua e defina Snap Category como Roads. Para pisos, use Floors; para objetos comuns, mantenha Decorative.</li>
+<li>Ative Enable Ctrl Directional Snap e Snap Enabled.</li>
+<li>Coloque a primeira pe&#231;a normalmente, sem Ctrl. Ela se torna a refer&#234;ncia.</li>
+<li>Segure Ctrl e mova o mouse &#224; direita, &#224; esquerda, &#224; frente ou atr&#225;s da refer&#234;ncia.</li>
+<li>A pr&#233;via encosta na borda correspondente sem girar ou redimensionar automaticamente. Clique para colocar.</li>
+<li>A nova pe&#231;a passa a ser a refer&#234;ncia. Solte Ctrl para voltar ao posicionamento normal.</li>
+</ol>
+<p>As dire&#231;&#245;es seguem os eixos horizontais da refer&#234;ncia. A refer&#234;ncia precisa estar ativa, na cena ativa e na mesma categoria modular. Colocar decora&#231;&#227;o n&#227;o substitui a &#250;ltima rua/piso.</p>
+<p>Ctrl + Q/E continua trocando o prefab e n&#227;o coloca objetos. Mantendo Ctrl pressionado, o encaixe direcional utiliza a mesma refer&#234;ncia ap&#243;s a troca. Mesmo em Paint, Ctrl s&#243; coloca por clique, nunca pelo arrasto.</p>
+<p>Edge Alignment alinha as bordas laterais; desligado, centraliza a pe&#231;a no eixo perpendicular. Snap Offset aplica um deslocamento em coordenadas globais. Valores que causem penetra&#231;&#227;o na refer&#234;ncia deixam a posi&#231;&#227;o inv&#225;lida; valores que afastem a pe&#231;a podem criar uma folga intencional.</p>
+<p>Pe&#231;as de tamanhos diferentes e piv&#244;s deslocados usam limites transformados. Para pe&#231;as regulares 8 &#215; 8, mantenha escala aleat&#243;ria em 1/1 e offsets em zero para come&#231;ar.</p>
+<h2 id='section-9'>7. &#194;ncoras, alinhamento e conex&#245;es manuais</h2>
+<ul>
+<li>BottomCorner: canto inferior da caixa de encaixe orientada; recomendado para ruas e pisos.</li>
+<li>BottomCenter: centro inferior da pe&#231;a.</li>
+<li>Pivot: piv&#244; original do prefab.</li>
+<li>Custom: ponto local informado em &#194;ncora local personalizada.</li>
+</ul>
+<p>Offset por prefab e Offset vertical global s&#227;o somados &#224; posi&#231;&#227;o. Eles podem deslocar a pe&#231;a para fora da grade. Alinhar &#224; superf&#237;cie segue a normal no posicionamento normal; o Ctrl preserva a pose da pr&#233;via durante o gesto.</p>
+<p>Para conex&#245;es manuais, ligue Usar pontos de conex&#227;o locais e informe Right, Left, Forward e Back no espa&#231;o local da raiz. Configure e coloque a refer&#234;ncia com esse recurso ligado. Se ambas as pe&#231;as tiverem pontos, o sistema une o ponto direcional da refer&#234;ncia ao ponto oposto da nova pe&#231;a. Caso contr&#225;rio, usa limites geom&#233;tricos. Os pontos s&#227;o copiados para a inst&#226;ncia ao coloc&#225;-la; editar o perfil depois n&#227;o altera pe&#231;as j&#225; colocadas.</p>
+<h2 id='section-10'>8. Posicionamento e pintura</h2>
+<ul>
+<li>Single: cada clique coloca uma inst&#226;ncia.</li>
+<li>Brush/Paint: clique e arraste para distribuir pe&#231;as com raio, densidade, espa&#231;amento e seed configurados.</li>
+<li>Grid: plano horizontal fixo; snap em X/Z quando habilitado.</li>
+<li>Surface: raycast em Colliders permitidos pela m&#225;scara de layers, com plano alternativo.</li>
+<li>Free: posicionamento normal sem snap de posi&#231;&#227;o. Ctrl direcional continua dispon&#237;vel quando solicitado para pe&#231;as modulares compat&#237;veis.</li>
+</ul>
+<p>Densidade &#233; o m&#225;ximo de candidatos por carimbo, n&#227;o objetos por metro quadrado. Espa&#231;amento e Evitar sobreposi&#231;&#227;o podem reduzir a quantidade colocada. No snap, a mesma c&#233;lula n&#227;o &#233; repetida durante um gesto. Ctrl+Z desfaz o arrasto inteiro.</p>
+<p>Rota&#231;&#227;o aleat&#243;ria atua fora do snap normal. Escala aleat&#243;ria multiplica a escala padr&#227;o e a original. Para encaixe modular previs&#237;vel, use escala aleat&#243;ria 1/1. Movimentos muito r&#225;pidos podem deixar intervalos porque o processamento por evento &#233; limitado.</p>
+<h2 id='section-11'>9. Refer&#234;ncia r&#225;pida de atalhos</h2>
+<ul>
+<li>Clique esquerdo: colocar.</li>
+<li>Arrastar com bot&#227;o esquerdo: pintar no modo Brush, sem Ctrl.</li>
+<li>Ctrl: encaixe direcional Roads/Floors.</li>
+<li>Ctrl + Q / Ctrl + E: anterior / pr&#243;ximo na categoria ativa.</li>
+<li>R: girar pelo incremento configurado.</li>
+<li>G: alternar Snap Enabled.</li>
+<li>Escape: parar a constru&#231;&#227;o.</li>
+<li>Alt: navegar na Scene View com os controles habituais.</li>
+<li>Ctrl + Z / Ctrl + Y: desfazer / refazer, conforme o mapeamento do Unity.</li>
+</ul>
+<h2 id='section-12'>10. Mesh Colliders e objetos gerados</h2>
+<p>Novas inst&#226;ncias substituem Box Colliders por Mesh Colliders quando h&#225; MeshFilters dispon&#237;veis. O prefab original permanece intacto. Triggers e objetos com Rigidbody din&#226;mico usam Convex, portanto nesses casos a forma de colis&#227;o &#233; convexa. Sem malha dispon&#237;vel, o Box Collider &#233; preservado.</p>
+<p>A convers&#227;o participa do Undo/Redo. Objetos colocados antes da mudan&#231;a n&#227;o s&#227;o convertidos retroativamente. A valida&#231;&#227;o preventiva usa limites e consultas f&#237;sicas conservadoras; ela pode bloquear algumas geometrias mesmo quando suas malhas n&#227;o se cruzam.</p>
+<h2 id='section-13'>11. Grade e linhas independentes</h2>
+<p>A p&#225;gina Grade cria uma guia WorldGrid edit&#225;vel pelo Inspector e pelo Transform. Essa guia n&#227;o define o snap do painel principal. Ative Gizmos para v&#234;-la.</p>
+<p>Linhas verdes cria guias poligonais. Selecione a linha, arraste os pontos ou use Adicionar pontos na Scene View. Informe um &#237;ndice no Inspector para remover um ponto. &#201; poss&#237;vel fechar o tra&#231;ado e editar cor e espessura. S&#227;o guias do editor, n&#227;o estradas prontas nem linhas renderizadas no jogo.</p>
+<h2 id='section-14'>12. Salvar, compartilhar e atualizar</h2>
+<ul>
+<li>Salve a cena para manter inst&#226;ncias, guias e metadados de gera&#231;&#227;o.</li>
+<li>Categorias, refer&#234;ncias por GUID e sua ordem: ProjectSettings/CoelhoWorldBuilderLibrary.asset.</li>
+<li>Prefer&#234;ncias gerais e perfis por prefab: UserSettings/CoelhoWorldBuilder.asset.</li>
+<li>Prefabs e seus arquivos .meta devem acompanhar o projeto para manter os GUIDs.</li>
+</ul>
+<p>Ao compartilhar, inclua a biblioteca de ProjectSettings, as cenas e os prefabs. UserSettings costuma ser ignorada no versionamento; compartilhe suas prefer&#234;ncias separadamente se desejar. Os caminhos internos antigos foram preservados ap&#243;s a mudan&#231;a de nome para manter compatibilidade.</p>
+<p>Para atualizar, substitua a instala&#231;&#227;o do pacote pela nova vers&#227;o. N&#227;o apague a biblioteca do projeto nem as cenas. Prefabs originais n&#227;o s&#227;o regravados pela ferramenta.</p>
+<h2 id='section-15'>13. Resolver problemas comuns</h2>
+<ul>
+<li>N&#227;o aparece pr&#233;via: confirme Activate Placement, um prefab raiz v&#225;lido e foco na Scene View. Saia de Play Mode e Prefab Mode. Confira erros no Console.</li>
+<li>Pr&#233;via vermelha: verifique objetos existentes, espa&#231;amento, Evitar sobreposi&#231;&#227;o, offsets e mensagem ao lado da pr&#233;via. Com Ctrl, confirme uma refer&#234;ncia da mesma categoria.</li>
+<li>Ctrl n&#227;o encaixa: defina Roads/Floors, ligue os dois controles de snap e coloque uma primeira refer&#234;ncia sem Ctrl. A refer&#234;ncia n&#227;o pode estar desativada ou em outra cena.</li>
+<li>Ctrl+Q/E n&#227;o troca: confirme categoria ativa com refer&#234;ncias v&#225;lidas, constru&#231;&#227;o ativa e foco na Scene View; saia do campo de texto.</li>
+<li>Grade n&#227;o muda: ligue Auto Grid Size e confira o override manual, escala e geometria do prefab. A guia da p&#225;gina Grade &#233; independente da grade de snap.</li>
+<li>Pe&#231;as apresentam folgas: comece com BottomCorner, offsets zero e escala aleat&#243;ria 1/1. Confira dimens&#245;es, rota&#231;&#227;o e auxiliares da malha. Ajuste dimens&#245;es ou conex&#245;es manualmente quando necess&#225;rio.</li>
+<li>Superf&#237;cie n&#227;o &#233; detectada: use Surface, confira Collider habilitado e a m&#225;scara de layers em Settings. Triggers e objetos gerenciados s&#227;o ignorados pelo raycast.</li>
+<li>Prefab aparece como [Ausente]: restaure o asset e seu .meta original ou remova e adicione novamente a refer&#234;ncia.</li>
+<li>Demo n&#227;o &#233; criada: salve antes todas as cenas abertas que ainda n&#227;o t&#234;m nome.</li>
+<li>Menu n&#227;o aparece: confirme a instala&#231;&#227;o no Package Manager e a aus&#234;ncia de erros de compila&#231;&#227;o. O menu fica sob Tools &gt; Coelho Labs.</li>
+</ul>
+<h2 id='section-16'>14. Limites da vers&#227;o</h2>
+<p>A ferramenta atual oferece posicionamento, pintura, grade, biblioteca e encaixe modular. N&#227;o oferece gera&#231;&#227;o procedural de cidades/estradas, fratura de malhas ou editor visual de regras.</p>
+<p>O encaixe por caixas/proje&#231;&#245;es n&#227;o garante uni&#227;o perfeita de pe&#231;as curvas, c&#244;ncavas, inclinadas, irregulares ou com conectores incompat&#237;veis. O ghost cobre MeshRenderer/MeshFilter e SkinnedMeshRenderer em pose inicial, sem reproduzir VFX, anima&#231;&#245;es ou shaders originais. A constru&#231;&#227;o atua somente na cena ativa e &#233; bloqueada em Prefab Mode e Play Mode.</p>
+<p>Testes automatizados em Unity 2022.3.22f1 e 6000.0.76f1 cobriram os sistemas principais. Eles n&#227;o substituem a confer&#234;ncia visual dos gestos, do ghost e dos atalhos no seu projeto. Consulte Documentation/Validation.md para os resultados e limites dos ensaios. Consulte LICENSE.md para os termos de uso do c&#243;digo.</p>
+<footer>Easy Level Design Tool 1.3.1 · Coelho Labs · Abra este arquivo no navegador. Para imprimir ou salvar em PDF, use Ctrl+P.</footer>
+</main></body></html>

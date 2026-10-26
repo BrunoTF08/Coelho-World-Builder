@@ -1,5 +1,11 @@
 # Registro de validação — 2026-10-25
 
+## Distribuição 1.3.1 e manual
+
+`Tools/Release/Build-Release.ps1` gera o pacote UPM .tgz, um ZIP com package.json/manual/LEIA-ME, o manual HTML offline e SHA256SUMS.txt em dist (ignorada pelo Git). O manual também está em Documentation/Manual-pt-BR.md e .html dentro do pacote.
+
+O .tgz foi instalado via manifest em um projeto Unity 2022.3.22f1 isolado. Passaram a importação do tarball, compilação C#, conferência do nome/versão, presença do manual offline, execução do menu e criação da janela com o título Easy Level Design Tool. Log local: `.validation/release-check.log`. Isso valida instalação e estrutura; não representa um novo ensaio visual de todas as ferramentas.
+
 ## 1.3.0 — Categorias e seleção rápida
 
 **46 verificações aprovadas em Unity 2022.3.22f1 e Unity 6000.0.76f1**, com `Tools/Validation/CategoryValidation.cs`. Logs: `.validation/categories2022-final.log` e `.validation/categories6-final.log`.

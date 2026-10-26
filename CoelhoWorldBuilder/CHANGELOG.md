@@ -4,6 +4,7 @@
 
 - Nome da ferramenta atualizado no Package Manager, menu Tools, janela, cabeçalho, ajuda, logs e documentação.
 - Identificadores de pacote/assemblies, namespaces, GUIDs e caminhos de persistência preservados para compatibilidade.
+- Manual de instruções em português, versão HTML offline e pacotes de distribuição ZIP/.tgz com checksums SHA-256.
 
 ## 1.3.0 — Categorias e seleção rápida
 
