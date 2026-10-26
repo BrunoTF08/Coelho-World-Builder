@@ -1,0 +1,1 @@
+{"name":"CoelhoLabs.WorldBuilder.Editor.Tests","references":["CoelhoLabs.WorldBuilder","CoelhoLabs.WorldBuilder.Editor"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"]}
